@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ReservasAereas.Models.Departamentos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Paises.DescripcionPais)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionDepartamento)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Paises.DescripcionPais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionDepartamento)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IdDepartamento }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IdDepartamento }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IdDepartamento })
+        </td>
+    </tr>
+}
+
+</table>

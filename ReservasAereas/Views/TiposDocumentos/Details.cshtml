@@ -1,0 +1,26 @@
+﻿@model ReservasAereas.Models.TiposDocumentos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TiposDocumentos</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DecripcionTipoDocumento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DecripcionTipoDocumento)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdTipoDocumento }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
