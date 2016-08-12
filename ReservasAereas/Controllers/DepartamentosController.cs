@@ -39,7 +39,7 @@ namespace ReservasAereas.Controllers
         // GET: Departamentos/Create
         public ActionResult Create()
         {
-            ViewBag.IdPais = new SelectList(db.Products, "IdPais", "DescripcionPais");
+            ViewBag.IdPais = Utilidades.OrdenarLista<Paises>(db.Products.ToList(), "IdPais", "DescripcionPais", orden: Utilidades.TipoOrdenadoLista.Ascendente);
             return View();
         }
 
@@ -57,7 +57,7 @@ namespace ReservasAereas.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.IdPais = new SelectList(db.Products, "IdPais", "DescripcionPais", departamentos.IdPais);
+            ViewBag.IdPais = Utilidades.OrdenarLista<Paises>(db.Products.ToList(), "IdPais", "DescripcionPais", departamentos.IdPais, Utilidades.TipoOrdenadoLista.Ascendente);
             return View(departamentos);
         }
 
@@ -73,7 +73,7 @@ namespace ReservasAereas.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.IdPais = new SelectList(db.Products, "IdPais", "DescripcionPais", departamentos.IdPais);
+            ViewBag.IdPais = Utilidades.OrdenarLista<Paises>(db.Products.ToList(), "IdPais", "DescripcionPais", departamentos.IdPais, Utilidades.TipoOrdenadoLista.Ascendente);
             return View(departamentos);
         }
 
@@ -90,7 +90,7 @@ namespace ReservasAereas.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.IdPais = new SelectList(db.Products, "IdPais", "DescripcionPais", departamentos.IdPais);
+            ViewBag.IdPais = Utilidades.OrdenarLista<Paises>(db.Products.ToList(), "IdPais", "DescripcionPais", departamentos.IdPais, Utilidades.TipoOrdenadoLista.Ascendente);
             return View(departamentos);
         }
 

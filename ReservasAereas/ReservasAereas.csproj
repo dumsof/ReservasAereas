@@ -215,6 +215,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PaisesController.cs" />
     <Compile Include="Controllers\TiposDocumentosController.cs" />
+    <Compile Include="Controllers\Utilidades.cs" />
     <Compile Include="Excepciones\ElmahHandleErrorAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
